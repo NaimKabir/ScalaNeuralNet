@@ -1,7 +1,10 @@
-var r1 = Array(0.0,1.0,2.0,3.0,4.0);
-var r2 = Array(5.0,4.0,3.0,2.0,1.0);
-var r3 = Array(9.0,8.0,7.0,6.0,5.0);
-var m = Array(r1,r2,r3);
+/* BASIC NEURAL NET IN SCALA
+by M. Kabir, kabir.naim@gmail.com
+Drawing upon many fantasic resources, such as:
+Python Basic Neural Net: http://iamtrask.github.io/2015/07/12/basic-python-network/
+Learning Scala By Example: http://www.scala-lang.org/docu/files/ScalaByExample.pdf
+Linear Algebra In Scala: http://www.scalaclass.com/book/export/html/1
+*/
 
 def readCSVtoDouble(csvfile: String) : Array[Array[Double]] = {
 	io.Source.fromFile(csvfile)
@@ -96,8 +99,8 @@ def NeuralNetTrainer(filename: String, iterations: Integer) : (Array[Array[Doubl
 }
 
 
-def NeuralNetPredictor(features: Array(Array[Double]), trainedlayers: (Array[Array[Double]], Array[Double])) : Array[Integer] = {
-	var layer1 = tranedlayers._1;
+def NeuralNetPredictor(features:Array[Array[Double]], trainedlayers: (Array[Array[Double]], Array[Double])) : Array[Array[Int]] = {
+	var layer1 = trainedlayers._1;
 	var layer2 = trainedlayers._2;
 
 	//Propagate data through layers, just like old times
@@ -107,4 +110,6 @@ def NeuralNetPredictor(features: Array(Array[Double]), trainedlayers: (Array[Arr
 	//As a final step I just want to threshold and offer clean binary classifation
 	var threshold = 0.5;
 	var prediction = out2.map{_.map{x=> x > 0.5}.map{x:Boolean => if(x) 1 else 0}};
+	
+	prediction
 }
