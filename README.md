@@ -34,7 +34,7 @@ I've not yet investigated how many iterations are optimal for learning the gener
 
 As an exercise, I tried writing all the linear algebra functions I'd need from scratch. These are:
 * dot: Perform a dot product between two vectors
-* T: perform a transpose on my Array of Arrays constructs (Which...I should really change to something less clunky)
+* T: perform a transpose on my Array of Arrays constructs (Pale imitations of matrices which...I should really change to something less clunky)
 * matmultiply: Multiply two 'matrices' (They are really just arrays of arrays)
 * piecewise: Perform element-wise multiplication of two vectors
 * piecewiseAdd: Perform element-wise ADDITION of two vectors
