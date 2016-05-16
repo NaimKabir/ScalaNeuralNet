@@ -11,14 +11,16 @@ def readCSVtoDouble(csvfile: String) : Array[Array[Double]] = {
 }
 
 
-def dot(mat1 : Array[Array[Double]], mat2: Array[Double]) : Array[Double] = {
-	var output_array = Array.fill[Double](mat1.length)(0); //This can try to dot product mismatching matrices. Beware. Also, learn how to throw errors!
-	for (X <- 0 to mat1.length -1){
-		output_array(X) = mat1(X).zip(mat2) //zip puts corresponding Array indexes into tuples. Super convenient
-			.map{t:(Double,Double) => t._1*t._2} //Map goes inside the tuples set up by .zip and applies the * function
-			.reduceLeft(_+_)
-	}
-	output_array
+def dot(mat1 : Array[Double], mat2: Array[Double]) : Double = {
+		mat1
+		.zip(mat2) //zip puts corresponding Array indexes into tuples. Super convenient
+		.map{t:(Double,Double) => t._1*t._2} //Map goes inside the tuples set up by .zip and applies the * function
+		.reduceLeft(_+_)
+}
+
+def matmultiply(mat1 : Array[Array[Double]], mat2: Array[Array[Double]]) : Array[Double] = {
+	var Tmat2 = T(mat2);
+	mat1.zip(Tmat2).map{t:(Array[Double],Array[Double]) => dot(t._1, t._2)};
 }
 
 
@@ -44,16 +46,15 @@ def NeuralNet(filename: String, iterations: Integer) : Array[Double] = {
 	targets = fulldata.map{_.reverse}.map{_.head}; //Getting targets, which are the last column of CSV
 	features = fulldata.map{_.reverse}.map{_.tail}.map{_.reverse}; //Getting features, which are the first N columns
 
-		layer1 = Array.fill[Double](targets(0).length)(rand.nextInt); // Here I'm generating random weights for my three 'synaptic layers'
-		layer2 = Array.fill[Double](targets(0).length)(rand.nextInt);
-		layer3 = Array.fill[Double](targets(0).length)(rand.nextInt);
+	// Here I'm generating random weights for my two 'synaptic layers'
+	layer1 = Array.fill[Array[Double]](features(0).length)(Array.fill[Double](features.length)(rand.nextInt)); 
+	layer2 = Array.fill[Double](targets.length)(rand.nextInt); //This layer will be applied to predictions obtained from layer1
 
 		//Predictions at each layer, feeding forward to the next layers.
 		pred1 = dot(features, layer1).map{x=> sigmoid(x,false)}; //Each prediction is fed through the sigmoid function to return a value between 0 and 1
 		pred2 = dot(pred1, layer2).map{x=> sigmoid(x,false)};
-		pred3 = dot(pred2, layer3).map{x=> sigmoid(x,false)}; 
 
 		//Final layer prediction error
-		Error =
+		Error = 
 
 */
