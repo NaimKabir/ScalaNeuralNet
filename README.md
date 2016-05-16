@@ -36,9 +36,9 @@ As an exercise, I tried writing all the linear algebra functions I'd need from s
 * dot: Perform a dot product between two vectors
 * T: perform a transpose on my Array of Arrays constructs (Which...I should really change to something less clunky)
 * matmultiply: Multiply two 'matrices' (They are really just arrays of arrays)
-* piecewise: Perform piecewise multiplication of two vectors
-* piecewiseAdd: Perform piecewise ADDITION of two vectors
-* sigmoid: This simply feeds an input number through the sigmoidal function, 1/(1+exp(-x))
+* piecewise: Perform element-wise multiplication of two vectors
+* piecewiseAdd: Perform element-wise ADDITION of two vectors
+* sigmoid: This simply feeds an input number through the sigmoidal function, 1/(1+exp(-x)). If the second argument is true, then it provides the value for the DERIVATIVE of the sigmoidal function, exp(x)/(exp(x)+1)^2
 
 ***
 # Resources
