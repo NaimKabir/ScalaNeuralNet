@@ -3,7 +3,7 @@ by M.Kabir
 */
 
 //First, create a string that represents the absolute path to the 'scalatoy.csv' file
-var filename = "C:/Example/Directory/Add/Your/Own/Please"
+var filename = "C:/Example/Directory/Add/Your/Own/Please/scalatoy.csv"
 
 //Then we can immediately get to training, for, let's say 400 iterations
 var trainedlayers = NeuralNetTrainer(filename,400)
