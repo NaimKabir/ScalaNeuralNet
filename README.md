@@ -31,6 +31,7 @@ I've not yet investigated how many iterations are optimal for learning the gener
 ***
 # Underlying Functions:
 * readCSVtoDouble: This reads a CSV file into an Array made of Array[Double].
+
 As an exercise, I tried writing all the linear algebra functions I'd need from scratch. These are:
 * dot: Perform a dot product between two vectors
 * T: perform a transpose on my Array of Arrays constructs (Which...I should really change to something less clunky)
