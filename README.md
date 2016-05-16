@@ -25,7 +25,7 @@ I've not yet investigated how many iterations are optimal for learning the gener
 ***
 # The Cool Top-Level Functions:
 **The Trainer. This trains 'synaptic layer' weights on some training data.**
-* NeuralNetTrainer( arg1 = String): This is a string specifying a .CSV file containing training data, as well as target values in the final column, arg2 = Integer: This is a number telling the NeuralNet to iterate [Integer] times.)
+* NeuralNetTrainer( arg1 = String: This is a string specifying a .CSV file containing training data, as well as target values in the final column, arg2 = Integer: This is a number telling the NeuralNet to iterate [Integer] times.)
 
 **The Predictor. This predicts binary values based on input feature data.**
 * NeuralNetPredictor(arg1 = Array(Array(Double)): Array of arrays of features only, arg2 = (Array(Array(Double)), Array(Double)): This tuple of arrays is the trained layers output from NeuralNetTrainer)
