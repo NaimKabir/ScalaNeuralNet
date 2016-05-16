@@ -1,6 +1,8 @@
 # Basic Neural Net (In Scala)
 by Naim Kabir
 
+File: neuralnet.scala
+
 This is a neural net binary classifier, hardcoded to use one hidden layer, using relatively simple weight-updating rules. Instead of a gradient-descent optimization, it uses a 'confidence'-based backpropagation of error during the training phase--making it less sophisticated, but still functional.
 ***
 # Demo
