@@ -5,6 +5,7 @@ This is a neural net binary classifier.
 ***
 # Demo
 A short demo can be found in neuralnetDEMO.scala
+
 This shows, line by line, how the below functions are meant to be used.
 
 Toy feature/target data (scalatoy.csv) is used with a tiny Python script(scalatoygenerator.py) that generates target values based on an arbitrary rule I made up. The rule was: if feature 2 or 5 are above 5.0 in value, the target label is 1.
