@@ -20,9 +20,9 @@ def dot(mat1 : Array[Double], mat2: Array[Double]) : Double = {
 
 def matmultiply(mat1 : Array[Array[Double]], mat2: Array[Array[Double]]) : Array[Array[Double]] = {
 	var Tmat2 = T(mat2);
-	outputM = Array.fill[Array[Double]](mat1.length)(Array.fill[Double](mat.length)(0))
-	for(c <- 0 to mat2.length -1){
-		for(cc <- 0 to mat1.length){
+	outputM = Array.fill[Array[Double]](mat1.length)(Array.fill[Double](Tmat2.length)(0))
+	for(c <- 0 to mat1.length -1){
+		for(cc <- 0 to Tmat2.length){
 			outputM(c)(cc) = dot(mat1(c),Tmat2(cc))
 		}
 	}
